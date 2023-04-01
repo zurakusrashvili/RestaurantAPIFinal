@@ -13,7 +13,7 @@
                     basketGetAll() {
                         $.ajax({
                             type: "GET",
-                            url: `${window.location.host}/api/Baskets/GetAll`,
+                            url: `https://${window.location.host}/api/Baskets/GetAll`,
                             success: function (response) {
                                 $scope.basketProducts = response
                                 $scope.calculateTotal()
@@ -26,7 +26,7 @@
                     updateBasket(data: BasketUpdateDto) {
                         $.ajax({
                             type: "PUT",
-                            url: `${window.location.host}/api/Baskets/UpdateBasket/${data.productId}`,
+                            url: `https://${window.location.host}/api/Baskets/UpdateBasket/${data.productId}`,
                             data: JSON.stringify(data),
                             headers: {
                                 'Accept': 'application/json',
@@ -43,7 +43,7 @@
                     addToApiBasket(data: BasketPostDto) {
                         $.ajax({
                             type: "POST",
-                            url: `${window.location.host}/api/Baskets/AddToBasket`,
+                            url: `https://${window.location.host}/api/Baskets/AddToBasket`,
                             data: JSON.stringify(data),
                             headers: {
                                 'Accept': 'application/json',
@@ -99,7 +99,7 @@
                     deleteFromBasket(id: number) {
                         $.ajax({
                             type: "DELETE",
-                            url: `${window.location.host}/api/Baskets/DeleteProduct/${id}`,
+                            url: `https://${window.location.host}/api/Baskets/DeleteProduct/${id}`,
                             success: function (response) {
                                 $scope.basketGetAll()
                             }
@@ -112,7 +112,7 @@
                     getAllCategories() {
                         $.ajax({
                             type: "GET",
-                            url: `${window.location.host}/api/Categories/GetAll`,
+                            url: `https://${window.location.host}/api/Categories/GetAll`,
                             success: function (response) {
                                 $scope.categories = response
                                 console.log(response)
@@ -124,7 +124,7 @@
                     getAllProducts() {
                         $.ajax({
                             type: "GET",
-                            url: `${window.location.host}/api/Products/GetAll`,
+                            url: `https://${window.location.host}/api/Products/GetAll`,
                             success: function (response) {
                                 $scope.products = response
                                 $scope.activeCategoryId = null;
@@ -162,7 +162,7 @@
 
                         $.ajax({
                             type: "GET",
-                            url: `${window.location.host}/api/Products/GetFiltered${params}`,
+                            url: `https://${window.location.host}/api/Products/GetFiltered${params}`,
                             success: function (response) {
                                 $scope.products = response;
                                 $scope.$apply();
@@ -181,7 +181,7 @@
                             $scope.activeCategoryId = Id;
                             $.ajax({
                                 type: "GET",
-                                url: `${window.location.host}/api/Products/GetFiltered?categoryId=${Id}`,
+                                url: `https://${window.location.host}/api/Products/GetFiltered?categoryId=${Id}`,
                                 success: function (response) {
                                     $scope.products = response;
                                     $scope.$apply()

@@ -26,7 +26,7 @@
                     updateBasket(data: BasketUpdateDto) {
                         $.ajax({
                             type: "PUT",
-                            url: `https://${window.location.host}/api/Baskets/UpdateBasket/${data.productId}`,
+                            url: `https://${window.location.host}/api/Baskets/UpdateBasket`,
                             data: JSON.stringify(data),
                             headers: {
                                 'Accept': 'application/json',

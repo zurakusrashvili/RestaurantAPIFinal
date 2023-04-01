@@ -8,7 +8,7 @@ var LobbyClass = /** @class */ (function () {
                     basketGetAll: function () {
                         $.ajax({
                             type: "GET",
-                            url: "https://rapi.stepprojects.ge:444/api/Baskets/GetAll",
+                            url: "https://".concat(window.location.host, "/api/Baskets/GetAll"),
                             success: function (response) {
                                 $scope.basketProducts = response;
                                 $scope.calculateTotal();
@@ -20,7 +20,7 @@ var LobbyClass = /** @class */ (function () {
                     updateBasket: function (data) {
                         $.ajax({
                             type: "PUT",
-                            url: "https://rapi.stepprojects.ge:444/api/Baskets/UpdateBasket/" + data.productId,
+                            url: "https://".concat(window.location.host, "/api/Baskets/UpdateBasket"),
                             data: JSON.stringify(data),
                             headers: {
                                 'Accept': 'application/json',
@@ -35,7 +35,7 @@ var LobbyClass = /** @class */ (function () {
                     addToApiBasket: function (data) {
                         $.ajax({
                             type: "POST",
-                            url: "https://rapi.stepprojects.ge:444/api/Baskets/AddToBasket",
+                            url: "https://".concat(window.location.host, "/api/Baskets/AddToBasket"),
                             data: JSON.stringify(data),
                             headers: {
                                 'Accept': 'application/json',
@@ -91,7 +91,7 @@ var LobbyClass = /** @class */ (function () {
                     deleteFromBasket: function (id) {
                         $.ajax({
                             type: "DELETE",
-                            url: "https://rapi.stepprojects.ge:444/api/Baskets/DeleteProduct/" + id,
+                            url: "https://".concat(window.location.host, "/api/Baskets/DeleteProduct/").concat(id),
                             success: function (response) {
                                 $scope.basketGetAll();
                             }
@@ -101,7 +101,7 @@ var LobbyClass = /** @class */ (function () {
                     getAllCategories: function () {
                         $.ajax({
                             type: "GET",
-                            url: "https://rapi.stepprojects.ge:444/api/Categories/GetAll",
+                            url: "https://".concat(window.location.host, "/api/Categories/GetAll"),
                             success: function (response) {
                                 $scope.categories = response;
                                 console.log(response);
@@ -113,7 +113,7 @@ var LobbyClass = /** @class */ (function () {
                     getAllProducts: function () {
                         $.ajax({
                             type: "GET",
-                            url: "https://rapi.stepprojects.ge:444/api/Products/GetAll",
+                            url: "https://".concat(window.location.host, "/api/Products/GetAll"),
                             success: function (response) {
                                 $scope.products = response;
                                 $scope.activeCategoryId = null;
@@ -143,7 +143,7 @@ var LobbyClass = /** @class */ (function () {
                         var params = '?' + new URLSearchParams(object).toString();
                         $.ajax({
                             type: "GET",
-                            url: "https://rapi.stepprojects.ge:444/api/Products/GetFiltered" + params,
+                            url: "https://".concat(window.location.host, "/api/Products/GetFiltered").concat(params),
                             success: function (response) {
                                 $scope.products = response;
                                 $scope.$apply();
@@ -161,7 +161,7 @@ var LobbyClass = /** @class */ (function () {
                             $scope.activeCategoryId = Id;
                             $.ajax({
                                 type: "GET",
-                                url: "https://rapi.stepprojects.ge:444/api/Products/GetFiltered?categoryId=" + Id,
+                                url: "https://".concat(window.location.host, "/api/Products/GetFiltered?categoryId=").concat(Id),
                                 success: function (response) {
                                     $scope.products = response;
                                     $scope.$apply();

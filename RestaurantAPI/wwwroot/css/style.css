@@ -2556,7 +2556,7 @@ html {
      background: url(../images/hover_bg.png);
      height: 6px;
 }
- .bottom_pitch ul li .active span:before {
+/* .bottom_pitch ul li .active span:before {
      position: absolute;
      content: "";
      left: -53px;
@@ -2566,7 +2566,7 @@ html {
      background-repeat: repeat-y;
      background: url(../images/hover_bg.png);
      height: 6px;
-}
+}*/
  .content_menu.bottom_pitch ul li a.active {
      color: #fff;
 }
